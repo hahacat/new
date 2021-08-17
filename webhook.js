@@ -1,7 +1,7 @@
 const http = require('http')
 const createHandler = require('github-webhook-handler')
 const handler = createHandler({
-  path: '/new',
+  path: '/deploy',
   secret: '123'
 })
 
