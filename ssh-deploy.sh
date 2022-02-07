@@ -4,5 +4,5 @@ echo Deploy Project
 git pull
 
 # 重启容器
-docker-compuse down
-docker-compuse up -d --force-recrete --build
+docker-compose down
+docker-compose up -d --force-recrete --build
