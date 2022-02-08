@@ -7,4 +7,4 @@ FROM  nginx
 COPY ./nginx.conf /etc/nginx/conf.d 
 COPY ./dist /var/www/html
 
-EXPOSE 8091
+EXPOSE 9999
