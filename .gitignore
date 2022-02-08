@@ -2,9 +2,9 @@
 node_modules
 /dist
 /nginx
-.yml
-.sh
-webhook.js
+*.yml
+*.sh
+*.webhook.js
 
 
 # local env files
