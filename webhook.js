@@ -7,7 +7,7 @@ const handler = createHandler({
   secret: 'test123'
 })
 
-function run_cmd (cmd, args, callback) {
+function runCmd (cmd, args, callback) {
   const child = spawn(cmd, args)
   let resp = ''
   child.stdout.on('data', function (buffer) {
@@ -34,7 +34,7 @@ handler.on('error', err => {
 
 // handler.on('*', event => {
 //   console.log('received * ', event.payload)
-// run_cmd('sh', ['./ssh-deploy.sh'], function (text) {
+// runCmd('sh', ['./ssh-deploy.sh'], function (text) {
 //   console.log(text)
 // })
 // })
@@ -44,7 +44,7 @@ handler.on('push', event => {
   console.log('received push 开始')
   if (event.payload.ref === 'refs/heads/master') {
     console.log('received push')
-    run_cmd('sh', ['./ssh-deploy.sh'], function (text) {
+    runCmd('sh', ['./ssh-deploy.sh'], function (text) {
       console.log(text)
     })
   }
