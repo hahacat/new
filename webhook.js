@@ -41,6 +41,7 @@ handler.on('error', err => {
 
 handler.on('push', event => {
   // console.log('received push', event.payload)
+  console.log('received push 开始')
   if (event.payload.ref === 'refs/heads/master') {
     console.log('received push')
     run_cmd('sh', ['./ssh-deploy.sh'], function (text) {
