@@ -1,7 +1,7 @@
 echo Deploy Project
 
 echo "清除代码"
-git clean -f
+# git clean -f
 
 # 拉取代码
 echo "拉取最新代码"
