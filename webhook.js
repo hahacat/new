@@ -32,12 +32,12 @@ handler.on('error', err => {
   console.error('Error', err.message)
 })
 
-handler.on('*', event => {
-  console.log('received * ', event.payload)
+// handler.on('*', event => {
+//   console.log('received * ', event.payload)
 // run_cmd('sh', ['./ssh-deploy.sh'], function (text) {
 //   console.log(text)
 // })
-})
+// })
 
 handler.on('push', event => {
   // console.log('received push', event.payload)
