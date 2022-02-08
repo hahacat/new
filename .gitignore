@@ -4,7 +4,7 @@ node_modules
 /nginx
 *.yml
 *.sh
-*.webhook.js
+webhook.js
 
 
 # local env files
