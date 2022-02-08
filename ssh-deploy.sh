@@ -4,7 +4,9 @@ echo Deploy Project
 git pull
 
 # 安装依赖，打包
+echo 安装依赖
 npm install
+echo 打包
 npm run build
 
 # 重启容器create
