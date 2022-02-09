@@ -5,5 +5,6 @@ FROM  nginx
 # RUN  npm run dev           
                  
 COPY ./nginx/conf.d /etc/nginx/conf.d 
-COPY ./dist /var/www/html
-EXPOSE 8091
+COPY ./dist /usr/share/nginx/html
+# COPY ./board/dist /usr/share/nginx/html/board
+EXPOSE 8080
