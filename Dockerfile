@@ -6,5 +6,4 @@ FROM  nginx
                  
 COPY ./nginx/conf.d /etc/nginx/conf.d 
 COPY ./dist /var/www/html
-
 EXPOSE 8091
