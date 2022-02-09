@@ -6,5 +6,4 @@ FROM  nginx
                  
 COPY ./nginx/conf.d /etc/nginx/conf.d 
 COPY ./dist /usr/share/nginx/html
-# COPY ./board/dist /usr/share/nginx/html/board
 EXPOSE 8080
