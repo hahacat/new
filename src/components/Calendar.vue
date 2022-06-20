@@ -1,6 +1,6 @@
 <template>
-  <div style="background: #00f">
-    <div id="calender">
+  <div>
+    <div class="calender">
       <div class="txt-c p-10">
         <span @click="prev"> ⬅️ </span>
         <input type="text" v-model="year" />年
@@ -30,16 +30,18 @@ import { defineComponent, ref, reactive, onMounted, watch } from 'vue'
 
 export default defineComponent({
   setup () {
-    const counter = ref(0)
-    const year = ref(2022)
-    const month = ref(0)
-    const day = ref(11)
+    const year = ref(0) // 年
+    const month = ref(0) // 月
+    const day = ref(0) // 日
     const current = ref(new Date())
     const activeDay = ref(11) // 选中的日期
     const February = ref(1) // 每个月第一天是星期几
     const spaceDay = ref('') // 判断2月份的天数
     const weekList = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
     const monthDay = reactive([31, '', 31, 30, 31, 30, 31, 31, 30, 31, 30, 31])
+    const currentYear = 2022
+    const currentMonth = 6
+    const currentDay = 1
 
     // 判断月份的第一天是星期几
     const getMonthFisrtDay = () => {
@@ -55,6 +57,10 @@ export default defineComponent({
       year.value = current.value.getFullYear()
       month.value = current.value.getMonth() + 1
       day.value = current.value.getDate()
+      currentYear.value = current.value.getFullYear()
+      currentMonth.value = current.value.getMonth() + 1
+      currentDay.value = current.value.getDate()
+
       activeDay.value = day.value
     }
 
@@ -76,7 +82,7 @@ export default defineComponent({
         '选择的日期是' + year.value + ' ' + month.value + ' ' + day.value
       )
     }
-
+    // 上一月
     const prev = () => {
       if (month.value === 1) {
         year.value--
@@ -84,9 +90,10 @@ export default defineComponent({
       } else {
         month.value--
       }
-      activeDay.value = 0
+      activeDay.value = -1
       getMonthFisrtDay()
     }
+    // 下一月
     const next = () => {
       if (month.value === 12) {
         year.value++
@@ -94,7 +101,7 @@ export default defineComponent({
       } else {
         month.value++
       }
-      activeDay.value = 0
+      activeDay.value = -1
       getMonthFisrtDay()
     }
 
@@ -115,7 +122,6 @@ export default defineComponent({
     })
 
     return {
-      counter,
       year,
       month,
       day,
@@ -135,35 +141,16 @@ export default defineComponent({
       next
     }
   },
-  name: 'calender',
-  // created () {
-  // this.current = new Date()
-  // this.getTheCurrentDate()
-  // this.getMonthFisrtDay()
-  // this.February = this.isLeapYear(this.year) ? 28 : 29
-  // this.monthDay.splice(1, 1, this.February)
-  // },
-  // watch: {
-  // month () {
-  //   if (this.month > 12 || this.month < 1) {
-  //     console.log('请输入正确月份')
-  //     return
-  //   }
-  //   this.getMonthFisrtDay()
-  // },
-  // year () {
-  //   this.getMonthFisrtDay()
-  // }
-  // },
-  methods: {}
+  name: 'calender'
 })
 </script>
 
 <style lang="scss" scoped>
-#calender {
+.calender {
   width: 80%;
   margin: 0 auto;
   border: 1px solid;
+  background: #efccef;
   .txt-c {
     text-align: center;
   }
