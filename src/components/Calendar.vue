@@ -65,7 +65,7 @@ export default defineComponent({
     }
     // 获取当前的日期
     const getTheCurrentDate = () => {
-      console.log(typeof current, 'current')
+      console.log(typeof current, 'current', `${current.toLocaleDateString()}--${current.toLocaleTimeString()}`)
       year.value = current.getFullYear()
       month.value = current.getMonth() + 1
       day.value = current.getDate()
