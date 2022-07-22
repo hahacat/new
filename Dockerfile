@@ -5,4 +5,4 @@ FROM  nginx
 # RUN  npm run dev         
 COPY ./nginx/conf.d /etc/nginx/conf.d
 COPY ./dist /usr/share/nginx/html
-EXPOSE 8080
+EXPOSE 8091
