@@ -4,6 +4,6 @@ FROM  nginx
 # RUN  npm install              
 # RUN  npm run dev
 
-COPY ./nginx.conf /etc/nginx/conf.d
+COPY ./nginx/conf.d /etc/nginx/conf.d
 COPY ./dist /usr/share/nginx/html
-EXPOSE 8081
+EXPOSE 8080
